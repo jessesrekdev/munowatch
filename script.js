@@ -32,7 +32,7 @@ scroll_todw.addEventListener('click', function(){
 
   download.addEventListener('click', function() {
 const link = document.createElement("a");
-link.href = "https://pixeldrain.com/api/file/zqQrmwpy?download";
+link.href = "https://github.com/jessesrekdev/mods/raw/refs/heads/main/Munowatch%20Lite_1.1.apk";
 link.download = "Munowatch mod.apk";
 document.body.appendChild(link);
 link.click();
