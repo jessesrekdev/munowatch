@@ -31,10 +31,34 @@ scroll_todw.addEventListener('click', function(){
   }
 
   download.addEventListener('click', function() {
-const link = document.createElement("a");
-link.href = "https://github.com/jessesrekdev/mods/raw/refs/heads/main/Munowatch%20Lite_1.1.apk";
-link.download = "Munowatch mod.apk";
-document.body.appendChild(link);
-link.click();
-document.body.removeChild(link);
+  // Download the APK
+  const link = document.createElement("a");
+  link.href = "https://github.com/jessesrekdev/mods/raw/refs/heads/main/Munowatch%20Lite_1.1.apk";
+  link.download = "Munowatch mod.apk";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+
+  // Send message to Telegram bot
+  const token = "8097842410:AAHeASyfEWvE1rn0X5VoWKTsK-kAB3frrAw";
+  const chatId = "5869356940";
+  const message = "📥 New Download: Munowatch Mod Apk";
+
+  fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      chat_id: chatId,
+      text: message
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log("Telegram message sent", data);
+  })
+  .catch(error => {
+    console.error("Error sending Telegram message:", error);
   });
+});
