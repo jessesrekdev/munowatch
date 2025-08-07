@@ -33,7 +33,7 @@ scroll_todw.addEventListener('click', function(){
   download.addEventListener('click', function() {
   // Download the APK
   const link = document.createElement("a");
-  link.href = "https://github.com/jessesrekdev/mods/raw/refs/heads/main/Munowatch%20Lite_1.1.apk";
+  link.href = "https://github.com/jessesrekdev/mods/raw/refs/heads/main/Munowatch%20Lite_1.5.apk";
   link.download = "Munowatch mod.apk";
   document.body.appendChild(link);
   link.click();
